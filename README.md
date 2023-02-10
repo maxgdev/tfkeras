@@ -13,3 +13,4 @@
 - TensorFlow.js: https://www.tensorflow.org/js
 - ml5.js: https://learn.ml5js.org/#/
 - p5.js: https://editor.p5js.org/
+- tfvis library: https://github.com/tensorflow/tfjs/tree/master/tfjs-vis
