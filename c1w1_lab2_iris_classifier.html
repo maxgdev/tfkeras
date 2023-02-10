@@ -1,10 +1,10 @@
 <html>
 <head>
-    <style>
-        body {background-color: gray;}
-        h1   {color: white;}
-        p    {color: white;}
-    </style>
+    <title>Iris species classification with Tensorflow</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="c1style.css">
 </head>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
@@ -49,13 +49,13 @@
             // Test Cases:
             
             // Setosa
-            const testVal = tf.tensor2d([4.4, 2.9, 1.4, 0.2], [1, 4]);
+            // const testVal = tf.tensor2d([4.4, 2.9, 1.4, 0.2], [1, 4]);
             
             // Versicolor
             // const testVal = tf.tensor2d([6.4, 3.2, 4.5, 1.5], [1, 4]);
             
             // Virginica
-            // const testVal = tf.tensor2d([5.8,2.7,5.1,1.9], [1, 4]);
+            const testVal = tf.tensor2d([5.8,2.7,5.1,1.9], [1, 4]);
             
             // Get prediction from testVal values
             const prediction = model.predict(testVal);
@@ -70,7 +70,7 @@
         }
         run();
     </script>
-    <p>Iris Dataset Clasifier</p>
+    <h1>Iris Species (Dataset) Clasifier</h1>
 <body>
 </body>
 </html>
