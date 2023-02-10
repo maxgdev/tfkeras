@@ -100,6 +100,21 @@
         await model.save('downloads://my_model');
     }
     run();
+
+    // Current result/Output in browser console
+    
+    // tfjs@latest:17 Uncaught (in promise) Error: logits and labels must have the same shape, but got shapes [10,1] and [10,2]
+    // at tfjs@latest:17:481606
+    // at tfjs@latest:17:481816
+    // at tfjs@latest:17:166879
+    // at t.scopedRun (tfjs@latest:17:167008)
+    // at t.tidy (tfjs@latest:17:166776)
+    // at JN (tfjs@latest:17:214146)
+    // at xL (tfjs@latest:17:481491)
+    // at tfjs@latest:17:528396
+    // at tfjs@latest:17:166879
+    // at t.scopedRun (tfjs@latest:17:167008)
+
 </script>
 <h1>Breast Cancer classification with Tensorflow</h1>
 
