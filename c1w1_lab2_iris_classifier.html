@@ -1,9 +1,16 @@
 <html>
-<head></head>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+<head>
+    <style>
+        body {background-color: gray;}
+        h1   {color: white;}
+        p    {color: white;}
+    </style>
+</head>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
     <script lang="js">
         async function run(){
-            const csvUrl = '/data/iris.csv';
+            const csvUrl = '/data/iris.csv'; // load csv file from local http
             const trainingData = tf.data.csv(csvUrl, {
                 columnConfigs: {
                     species: {
@@ -12,15 +19,16 @@
                 }
             });
             
-            const numOfFeatures = (await trainingData.columnNames()).length - 1;
+            // 4 columns of data (features) & 1 column for the label (species)
+            const numOfFeatures = (await trainingData.columnNames()).length - 1; 
             const numOfSamples = 150;
             const convertedData =
                   trainingData.map(({xs, ys}) => {
                       const labels = [
-                            ys.species == "setosa" ? 1 : 0,
-                            ys.species == "virginica" ? 1 : 0,
-                            ys.species == "versicolor" ? 1 : 0
-                      ] 
+                            ys.species == "Iris-setosa" ? 1 : 0,
+                            ys.species == "Iris-versicolor" ? 1 : 0,
+                            ys.species == "Iris-virginica" ? 1 : 0
+                      ] // one hot encoding of species data
                       return{ xs: Object.values(xs), ys: Object.values(labels)};
                   }).batch(10);
             
@@ -49,7 +57,9 @@
             // Virginica
             // const testVal = tf.tensor2d([5.8,2.7,5.1,1.9], [1, 4]);
             
+            // Get prediction from testVal values
             const prediction = model.predict(testVal);
+            console.log("prediction", prediction)
             const pIndex = tf.argMax(prediction, axis=1).dataSync();
             
             const classNames = ["Setosa", "Virginica", "Versicolor"];
