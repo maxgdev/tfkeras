@@ -11,8 +11,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
 <script lang="js">
 
-    tf.tensor([1, 2, 3, 4]).print();
-    console.log("tensor")
+    const data = tf.tensor([0, 0, 127, 255, 0, 1, 120, 255], [2, 2, 2]);
+    data.print();
+    console.log("tensor", data);
 
 </script>
 <h1>Tensors in Tensorflow</h1>
