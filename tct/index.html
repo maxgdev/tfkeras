@@ -22,16 +22,17 @@
     //      [[0  , 1  ],[120, 255]]
     //  ]
 
-    const arrayValues = []
-    for (let i=0; i < 15; i++) {
+    const arrayValues = [];
+    const arraySize = 30;
+    for (let i=0; i < arraySize; i++) {
         arrayValues[i] = Math.round((Math.random(0, 100) * 100))
     }
     // const dataShape = [3, 5];
-    const dataShape = [5, 3];
-    const data = tf.tensor(arrayValues, dataShape);
+    const dataShape = [2, 5, 3];
+    const tensorData = tf.tensor3d(arrayValues, dataShape,'int32') ;
 
-    data.print();
-    console.log("tensor", data);
+    tensorData.print();
+    console.log("tensor", tensorData.dataSync(tensorData));
 
 </script>
 <h1>Tensors in Tensorflow</h1>
