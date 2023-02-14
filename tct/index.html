@@ -11,7 +11,25 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
 <script lang="js">
 
-    const data = tf.tensor([0, 0, 127, 255, 0, 1, 120, 255], [2, 2, 2]);
+    // Tensor SHAPES
+    // 2 by 2 array
+    // const data = tf.tensor([0, 0, 127, 255], [2, 2]);
+    // [0,0], [127,255]
+    // 2 of 2 by 2
+    // const data = tf.tensor([0, 0, 127, 255, 0, 1, 120, 255], [2, 2, 2]);
+    //  [
+    //      [[0  , 0  ], [127, 255]], 
+    //      [[0  , 1  ],[120, 255]]
+    //  ]
+
+    const arrayValues = []
+    for (let i=0; i < 15; i++) {
+        arrayValues[i] = Math.round((Math.random(0, 100) * 100))
+    }
+    // const dataShape = [3, 5];
+    const dataShape = [5, 3];
+    const data = tf.tensor(arrayValues, dataShape);
+
     data.print();
     console.log("tensor", data);
 
