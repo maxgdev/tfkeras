@@ -27,15 +27,29 @@
     for (let i=0; i < arraySize; i++) {
         arrayValues[i] = Math.round((Math.random(0, 100) * 100))
     }
-    // const dataShape = [3, 5];
-    const dataShape = [2, 5, 3];
-    const tensorData = tf.tensor3d(arrayValues, dataShape,'int32') ;
+    // const dataShape = [5, 3];
+    const dataShapeA = [2, 5, 3];
+    const dataShapeB = [3, 5, 2];
+    // const tensorData = tf.tensor3d(arrayValues, dataShape,'int32') ;
 
-    tensorData.print();
-    console.log("tensor", tensorData.dataSync(tensorData));
+    const aMatrix = tf.tensor3d(arrayValues, dataShapeA,'int32') ;
+    const bMatrix = tf.tensor3d(arrayValues, dataShapeB,'int32') ;
+    // we need to transpose matrix b, so its 3, 5, 2 ??
+    // const transposeBMatrix = bMatrix.transpose()
+    // const cMatrix = aMatrix.matMul(bMatrix)
+    // tensorData.print();
+
+    // console.log("tensor", tensorData.dataSync(tensorData));
+    console.log("aMatrix", aMatrix);
+    console.log("aMatrix", aMatrix.dataSync(aMatrix));
+    console.log("bMatrix", bMatrix);
+    console.log("bMatrix", bMatrix.dataSync(bMatrix));
+    // console.log("transposeBMatrix", bMatrix.dataSync(transposeBMatrix));
+    // console.log("cMatrix", cMatrix.dataSync(cMatrix));
+    
 
 </script>
-<h1>Tensors in Tensorflow</h1>
+<h1>3d Tensors Operations in Tensorflow</h1>
 
 <body>
 </body>
