@@ -2,6 +2,9 @@
 
 ## Examples
 - Image classifier
+- Webcam Video classifier
+- Webcam Pose classifier
+
 
 ## Credits
 - ml5.js - Friendly Machine Learning for the Web - https://learn.ml5js.org/#/
