@@ -3,7 +3,7 @@
 ## Examples
 - Image classifier
 - Webcam Video classifier
-- Webcam Pose classifier
+- Image Pose classifier
 
 
 ## Credits
